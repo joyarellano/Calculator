@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="flex justify-center py-20">
+        <div class="bg-blue-900 h-150 w-100  rounded-2xl ">
+            <div class="lg:px-6 md:px-6 sm:px-7 px-8 max-w-7xl mx-auto">
+                <div>
+                    <input type="text" name="" id="display" class="bg-white lg:h-25 md:h-25 sm:h-25 h-23 lg:w-87 md:w-87 sm:w-85 w-83 my-5 rounded-xl text-4xl">
+                </div>
+                <div class="my-2 flex justify-center gap-1">
+                    <button onclick="clearAll()"
+                    class="bg-red-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">C</button>
+                    <button onclick="deleted()"
+                    class="bg-red-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">DEL</button>
+                    <button onclick="setoperator('%')"
+                    class="bg-pink-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">%</button>
+                    <button onclick="setoperator('/')"
+                    class="bg-pink-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">/</button>
+                </div>
+                <div class="my-2 flex justify-center gap-1">
+                    <button onclick="number(7)"
+                    class="bg-purple-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">7</button>
+                    <button onclick="number(8)"
+                    class="bg-purple-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">8</button>
+                    <button onclick="number(9)"
+                    class="bg-purple-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">9</button>
+                    <button onclick="setoperator('*')"
+                    class="bg-pink-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">X</button>
+                </div>
+                <div class="my-2 flex justify-center gap-1">
+                    <button onclick="number(4)"
+                    class="bg-purple-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">4</button>
+                    <button onclick="number(5)"
+                    class="bg-purple-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">5</button>
+                    <button onclick="number(6)"
+                    class="bg-purple-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">6</button>
+                    <button onclick="setoperator('-')"
+                    class="bg-pink-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">-</button>
+                </div>
+                <div class="my-2 flex justify-center gap-1">
+                    <button onclick="number(1)"
+                    class="bg-purple-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">1</button>
+                    <button onclick="number(2)"
+                    class="bg-purple-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19  text-white text-3xl text-white rounded-xl hover:bg-gray-300">2</button>
+                    <button onclick="number(3)"
+                    class="bg-purple-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">3</button>
+                    <button onclick="setoperator('+')"
+                    class="bg-pink-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">+</button>
+                </div>
+                <div class="my-2 flex justify-center gap-1">
+                    <button onclick="number(0)"
+                    class="bg-purple-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-43 md:w-43 sm:w-43 w-39  text-white text-3xl text-white rounded-xl hover:bg-gray-300">0</button>
+                    <button onclick="appendDot()"
+                    class="bg-green-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">.</button>
+                    <button onclick="calculate()"
+                    class="bg-green-500 lg:h-20 md:h-20 sm:h-19 h-19 lg:w-21 md:w-21 sm:w-21 w-19 text-white text-3xl text-white rounded-xl hover:bg-gray-300">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let firstNumber = "";
+        let secondNumber = "";
+        let operator = "";
+        let display = document.getElementById("display")
+
+        function number(num) {
+            if (operator === "") {
+                firstNumber += num;
+                display.value = firstNumber;
+            } else {
+                secondNumber += num;
+                display.value = secondNumber;
+            }
+        }
+
+        function deleted() {
+            if (operator === "") {
+                if (firstNumber.length > 0)
+                  firstNumber = firstNumber.slice(0, -1);
+                  display.value = firstNumber;
+            } else if (operator !== "") {
+                if (secondNumber.length > 0)
+                  secondNumber = secondNumber.slice(0, -1);
+                  display.value = secondNumber;
+            }
+        }
+
+        function appendDot() {
+            if (operator === "") {
+                if (!firstNumber.includes(".")) {
+                    firstNumber += ".";
+                    display.value = firstNumber;
+                }
+            } else {
+                if (!secondNumber.includes(".")) {
+                    secondNumber += ".";
+                    display.value = secondNumber;
+                }
+            }
+        }
+
+        function setoperator(op) {
+            if (firstNumber !== "") {
+                operator += op;
+
+            }
+        }
+
+        function calculate() {
+            let result = 0;
+            let num1 = Number(firstNumber);
+            let num2 = Number(secondNumber);
+
+            if (operator === "+") {
+                result = num1 + num2;
+            } else if (operator === "-") {
+                result = num1 - num2;
+            } else if (operator === "*") {
+                result = num1 * num2;
+            } else if (operator === "/") {
+                if (num2 === 0) {
+                    display.value = "Error";
+                    return;
+                }
+                result = num1 / num2;
+
+            } else if (operator === "%") {
+                result = num1 % num2;
+            }
+
+            display.value = result;
+            firstNumber = result.toString();
+            secondNumber = "";
+            operator = "";
+        }
+
+        function clearAll() {
+            firstNumber = "";
+            secondNumber = "";
+            operator = "";
+            display.value = "";
+        }
+
+    </script>
+</body>
+
+</html>
